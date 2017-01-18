@@ -10,6 +10,7 @@ $ sudo apt dist-upgrade
 
 Requirements:
 This node.js module supports querying air temperature and relative humidity from a compatible DHT sensor.
+https://learn.adafruit.com/node-embedded-development/installing-node-dot-js to install node on raspberry pi
 
 $ sudo apt install npm
 $ npm install node-dht-sensor onoff node-telegram-bot
