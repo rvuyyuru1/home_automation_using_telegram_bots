@@ -11,6 +11,7 @@ $ sudo apt dist-upgrade
 Requirements:
 This node.js module supports querying air temperature and relative humidity from a compatible DHT sensor.
 
+$ sudo apt install npm
 $ npm install node-dht-sensor onoff node-telegram-bot
 
 The available commands are:
