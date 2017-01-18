@@ -1,5 +1,5 @@
 # home_automation_using_telegram_bots
-//Author VUYYURU RAJA SHEKAR REDDY 
+Author VUYYURU RAJA SHEKAR REDDY 
 
 
 1.first install rasbian os into raspberry pi
