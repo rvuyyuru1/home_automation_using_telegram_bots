@@ -14,15 +14,15 @@ var Bot = require('node-telegram-bot');
 
 // Initialize relay board (using onoff library)
 var Gpio = require('onoff').Gpio,
-  relay1 = new Gpio(2, 'out'),
-  relay2 = new Gpio(3, 'out');
+  relay1 = new Gpio(14, 'out'),
+  relay2 = new Gpio(15, 'out');
 
 // Turn both the relays off
 relay1.writeSync(0);
 relay2.writeSync(0);
 
 // Initialize DHT11 sensor
-sensorLib.initialize(11, 4);
+sensorLib.initialize(11, 18);
 
 // Initialize and start Telegram BOT (insert your real token)
 var Rajabot = new Bot({
