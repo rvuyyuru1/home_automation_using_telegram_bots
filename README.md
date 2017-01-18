@@ -16,7 +16,7 @@ $ npm install node-dht-sensor onoff node-telegram-bot
 The available commands are:
 
  /getouts, shows the actual status of the two relays
- /setout1 ON|OFF, /setout2 ON|OFF, sets one of the two outputs to ON or OFF
+ /setout1 ON|OFF, /setout2 ON|OFF, sets one of the outputs to ON or OFF
  /gettemp, shows the actual temperature
  /gethum, shows the actual humidity
 
