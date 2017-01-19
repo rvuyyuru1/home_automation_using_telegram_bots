@@ -7,12 +7,35 @@ Author VUYYURU RAJA SHEKAR REDDY
 update your os to latest version by following commands
 $ sudo apt update
 $ sudo apt dist-upgrade
-
+1)
 Requirements:
-This node.js module supports querying air temperature and relative humidity from a compatible DHT sensor.
-https://learn.adafruit.com/node-embedded-development/installing-node-dot-js to install node on raspberry pi
+C library for Broadcom BCM 2835 as used in Raspberry Pi
+This is a C library for Raspberry Pi (RPi). It provides access to GPIO and other IO functions on the Broadcom BCM 2835 chip, as used in the RaspberryPi, allowing access to the GPIO pins on the 26 pin IDE plug on the RPi board so you can control and interface with various external devices.
+$ sudo su
+$ wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
+$ tar -xvzf bcm2835-1.50.tar.gz
+$ cd bcm2835-1.50/
+$ ./configure
+$  make
+$  sudo make check
+$ make install
 
+ 
+
+
+Installing Nodejs 
+$ curl -sLS https://apt.adafruit.com/add | sudo bash
+$ sudo apt-get install node
+
+
+
+
+installing NPM(Node Pakage manager)
 $ sudo apt install npm
+$ mkdir project 
+$ cd project
+$  git clone https://github.com/rajashekarreddy2222/home_automation_using_telegram_bots.git
+$ cd home_automation_using_telegram_bots
 $ npm install node-dht-sensor onoff node-telegram-bot
 
 The available commands are:
@@ -30,7 +53,6 @@ Telegram bots are public, that means that every user can send messages to them.
  
 
  $ sudo node user.js
- 
  $sudo node bot.js
   
   
