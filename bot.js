@@ -17,9 +17,9 @@ var Gpio = require('onoff').Gpio,
   light1 = new Gpio(14, 'out'),
   light2 = new Gpio(15, 'out');
 
-// Turn both the relays off
-relay1.writeSync(0);
-relay2.writeSync(0); 
+// Turn both the lights off
+light1.writeSync(0);
+light2.writeSync(0); 
 
 // Initialize DHT11 sensor
 sensorLib.initialize(11, 18);
@@ -28,7 +28,7 @@ sensorLib.initialize(11, 18);
 var Rajabot = new Bot({ token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'});
 
 // Attach event on every received message 
-Rajabot.on('message', function (message) {
+ Rajabot.on('message', function (message) {
  parseMessage(message);
 });
 
