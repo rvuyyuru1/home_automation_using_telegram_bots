@@ -14,29 +14,31 @@ var Bot = require('node-telegram-bot');
 
 // Initialize relay board (using onoff library)
 var Gpio = require('onoff').Gpio,
-  relay1 = new Gpio(14, 'out'),
-  relay2 = new Gpio(15, 'out');
+  light1 = new Gpio(14, 'out'),
+  light2 = new Gpio(15, 'out');
 
 // Turn both the relays off
 relay1.writeSync(0);
-relay2.writeSync(0);
+relay2.writeSync(0); 
 
 // Initialize DHT11 sensor
 sensorLib.initialize(11, 18);
 
 // Initialize and start Telegram BOT (insert your real token)
-var Rajabot = new Bot({
-  token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-});
+var Rajabot = new Bot({ token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'});
 
 // Attach event on every received message 
 Rajabot.on('message', function (message) {
-  parseMessage(message);
+ parseMessage(message);
 });
 
 // Start the bot 
-Rajabot.start();
-console.log("RAJA SEKHAR YOUR BOT IS READY!");
+  Rajabot.start();
+  console.log("RAJA SEKHAR YOUR BOT IS READY! ");
+  console.log("/getouts, shows the actual status of the two relays");
+  console.log("/setout1 ON|OFF, /setout2 ON|OFFsets one of the outputs to ON or OFF");
+  console.log("/gettemp, shows the actual temperature ");
+  console.log("/gethum, shows the actual humidity");
 
 // Function that handles a new message
 function parseMessage(message) {
@@ -46,21 +48,21 @@ function parseMessage(message) {
   switch(true) {
   
     case message.text == "/gettemp":
-      Rajabot.sendMessage({
+        Rajabot.sendMessage({
         chat_id: message.chat.id,
         text: ' temperature: ' + sensorLib.read().temperature.toFixed(0) + '°C',
       });
       break;
 
     case message.text == "/gethum":
-      Rajabot.sendMessage({
+        Rajabot.sendMessage({
         chat_id: message.chat.id,
         text: 'humidity: ' + sensorLib.read().humidity.toFixed(0) + '%',
       });
       break;
 
     case message.text == "/getouts":
-      Rajabot.sendMessage({
+        Rajabot.sendMessage({
         chat_id: message.chat.id,
         text: 'outputs status:\nOutput 1 is ' + relay1.readSync() + '\nOutput 2 is ' + relay2.readSync(),
       });
@@ -69,19 +71,19 @@ function parseMessage(message) {
     case /^\/setout1/.test(message.text):
       var command = message.text.replace("/setout1 ", "");
       if(command.toLowerCase() == "on") {
-        relay1.writeSync(1);
-        Rajabot.sendMessage({
+          light1.writeSync(1);
+          Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Output 1 turned ON',
         });
       } else if(command.toLowerCase() == "off") {
-        relay1.writeSync(0);
-        Rajabot.sendMessage({
+          light1.writeSync(0);
+          Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Output 1 turned OFF',
         });
       } else
-        Rajabot.sendMessage({
+          Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Unknown command: not present in our list of commands' + command,
         });    
@@ -90,24 +92,32 @@ function parseMessage(message) {
     case /^\/setout2/.test(message.text):
       var command = message.text.replace("/setout2 ", "");
       if(command.toLowerCase() == "on") {
-        relay2.writeSync(1);
-        Rajabot.sendMessage({
+          light2.writeSync(1);
+          Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Output 2 turned ON',
         });
       } else if(command.toLowerCase() == "off") {
-        relay2.writeSync(0);
-        Rajabot.sendMessage({
+          light2.writeSync(0);
+          Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Output 2 turned OFF',
         });
       } else
-        Rajabot.sendMessage({
+          Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Unknown command: not present in our list of commands' + command,
         });
     break;
-  }
+   default:
+    {
+          Rajabot.sendMessage({
+          chat_id: message.chat.id,
+          text: 'Unknown command: not present in our list of commands' + command,
+        });
+    break;    
+    }
+             }
  
     
 }
