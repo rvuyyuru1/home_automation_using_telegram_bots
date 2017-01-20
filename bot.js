@@ -114,6 +114,11 @@ function parseMessage(message) {
           Rajabot.sendMessage({
           chat_id: message.chat.id,
           text: 'Unknown command: not present in our list of commands' + command,
+          text: '/getouts, shows the actual status of the two relays',
+          test: '/setout1 ON|OFF, /setout2 ON|OFFsets one of the outputs to ON or OFF',
+          test: '/gettemp, shows the actual temperature',
+          test: '/gethum, shows the actual humidity,
+          
         });
     break;    
     }
