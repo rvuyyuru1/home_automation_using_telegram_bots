@@ -5,7 +5,7 @@
 
 // Authorized users, replace with your real IDs
 var users = [
- 
+ 56187479 
 ];
 
 // Include required libraries
@@ -25,7 +25,7 @@ light2.writeSync(0);
 sensorLib.initialize(11, 18);
 
 // Initialize and start Telegram BOT (insert your real token)
-var Rajabot = new Bot({ token: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'});
+var Rajabot = new Bot({ token: '265220613:AAHKiK75cxdfC7TgZrJyDZohKPOepJvmrwQ'});
 
 // Attach event on every received message 
  Rajabot.on('message', function (message) {
