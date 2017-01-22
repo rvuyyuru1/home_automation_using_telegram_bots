@@ -23,6 +23,6 @@ function echo(message) {
   
   bot.sendMessage({
 	  chat_id: message.chat.id,
-	  text: 'User ID ' + message.from.id + ' says "' + message.text + '"',
+	  text:  'Your User ID ' + message.from.id + ' send this  message to @Rajasekahar and he will add you to home_Automation_bot, for testing  \n THANK YOU',
   });
 }
