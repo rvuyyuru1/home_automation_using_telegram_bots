@@ -47,6 +47,12 @@ function parseMessage(message) {
 
   switch(true) {
   
+    case message.text == "/status":
+        Rajabot.sendMessage({
+        chat_id: message.chat.id,
+        text: '\ntemperature: ' + sensorLib.read().temperature.toFixed(0) + '°C'+'\nhumidity: ' + sensorLib.read().humidity.toFixed(0) + '%'+'\noutputs status:\nOutput 1 is ' + relay1.readSync() + '\nOutput 2 is ' + relay2.readSync(),
+      });
+      break;
     case message.text == "/gettemp":
         Rajabot.sendMessage({
         chat_id: message.chat.id,
@@ -113,12 +119,12 @@ function parseMessage(message) {
     {
           Rajabot.sendMessage({
           chat_id: message.chat.id,
-          text: 'Unknown command: not present in our list of commands' + command,
-          text: '/getouts, shows the actual status of the two relays',
-          test: '/setout1 ON|OFF, /setout2 ON|OFFsets one of the outputs to ON or OFF',
-          test: '/gettemp, shows the actual temperature',
-          test: '/gethum, shows the actual humidity,
-          
+          text: '\nUnknown command: not present in our list of commands' + command+
+          '\n /getouts, shows the actual status of the two relays'+
+          '\n /gettemp, shows the actual temperature'+
+          '\n /gethum, shows the actual humidity'+
+          '\n /status, shows status all '+
+          '\n /setout1 ON|OFF, /setout2 ON|OFFsets one of the outputs to ON or OFF',
         });
     break;    
     }
