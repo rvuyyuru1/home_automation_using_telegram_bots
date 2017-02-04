@@ -5,7 +5,7 @@ Author VUYYURU RAJA SHEKAR REDDY
 1.first install rasbian os into raspberry pi
 
 update your os to latest version by following commands
-$ sudo apt update
+$ sudo apt update /n
 $ sudo apt dist-upgrade
 
 Requirements:
