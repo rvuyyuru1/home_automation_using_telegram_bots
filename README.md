@@ -5,7 +5,7 @@ Author VUYYURU RAJA SHEKAR REDDY
 1.first install rasbian os into raspberry pi
 
 update your os to latest version by following commands
-$ sudo apt update /n
+$ sudo apt update 
 $ sudo apt dist-upgrade
 
 Requirements:
@@ -15,8 +15,8 @@ This is a C library for Raspberry Pi (RPi). It provides access to GPIO and other
 $ sudo su
 $ mkdir project 
 $ cd project
-$ wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
-$ tar -xvzf bcm2835-1.50.tar.gz
+$ wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.52.tar.gz
+$ tar -xvzf bcm2835-1.52.tar.gz
 $ cd bcm2835-1.50/
 $ ./configure
 $  make
@@ -27,11 +27,15 @@ $ make install
 
 
 Installing Nodejs 
+wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz 
+tar -xvf node-v4.0.0-linux-armv7l.tar.gz 
+cd node-v4.0.0-linux-armv7l
+sudo cp -R * /usr/local/
 $ wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
 $ sudo dpkg -i node_latest_armhf.deb
 
 Installing NPM(Node Pakage manager)
-$ sudo apt install npm
+$ sudo apt-get install nodejs npm
 $ git clone https://github.com/rajashekarreddy2222/home_automation_using_telegram_bots.git
 $ cd home_automation_using_telegram_bots
 $ npm install node-dht-sensor onoff node-telegram-bot
