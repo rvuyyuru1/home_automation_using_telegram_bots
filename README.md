@@ -28,7 +28,9 @@ $ make install
 
 Installing Nodejs 
 $ wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz 
-$ tar -xvf node-v4.0.0-linux-armv7l.tar.gz 
+$ wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz
+$ wget https://nodejs.org/dist/v4.4.7/node-v4.4.7-linux-armv7l.tar.gz
+$ tar -xvf node-v4.4.7-linux-armv7l.tar.gz 
 $ cd node-v4.0.0-linux-armv7l
 $ sudo cp -R * /usr/local/
 
