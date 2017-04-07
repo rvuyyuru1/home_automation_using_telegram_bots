@@ -27,12 +27,11 @@ $ make install
 
 
 Installing Nodejs 
-wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz 
-tar -xvf node-v4.0.0-linux-armv7l.tar.gz 
-cd node-v4.0.0-linux-armv7l
-sudo cp -R * /usr/local/
-$ wget http://node-arm.herokuapp.com/node_latest_armhf.deb 
-$ sudo dpkg -i node_latest_armhf.deb
+$ wget https://nodejs.org/dist/v4.0.0/node-v4.0.0-linux-armv7l.tar.gz 
+$ tar -xvf node-v4.0.0-linux-armv7l.tar.gz 
+$ cd node-v4.0.0-linux-armv7l
+$ sudo cp -R * /usr/local/
+
 
 Installing NPM(Node Pakage manager)
 $ sudo apt-get install nodejs npm
